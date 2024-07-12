@@ -1,0 +1,16 @@
+<app-search (search)="onSearch($event)"></app-search>
+
+<select (change)="onMealTypeChange($event)">
+    <option value="">All Meal Types</option>
+    <option value="Lunch">Lunch</option>
+    <option value="Dinner">Dinner</option>
+    <option value="Snack">Snack</option>
+</select>
+
+<div *ngFor="let recipe of recipes">
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+</div>
+
+<app-pagination [currentPage]="currentPage" [itemsPerPage]="itemsPerPage" [totalItems]="totalItems"
+    (pageChange)="onPageChange($event)">
+</app-pagination>
